@@ -1,0 +1,546 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="robot">
+<!-- ...........................................links and joints........................................................................... -->
+<link name= "world" />
+
+<link name= "base_link">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/base.stl"/>    
+        </geometry>
+        <material name = "light_grey">
+         <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/base.stl"/>    
+        </geometry>    
+    </collision>
+    
+    <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value= "1"/>
+        <inertia ixx="0.236016666667" ixy="0" ixz="0" iyy="0.236016666667" iyz="0" izz="0.4624" />
+    </inertial>
+</link>
+
+
+<link name= "link1">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link1.stl"/>    
+        </geometry>
+        <material name = "light_grey">
+         <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link1.stl"/>    
+        </geometry>    
+    </collision>
+
+    <inertial>
+        <origin xyz="0 0.054450 0.205749" rpy="0 0 0" />
+        <mass value= "3"/>
+        <!--<inertia ixx="0.001643" ixy="-0" ixz="0" iyy="0.001350" iyz="-0" izz="0.000720" />-->
+        <inertia ixx="0.135625" ixy="-0" ixz="-0" iyy="0.135625" iyz="-0" izz="0.06" /> 
+    </inertial>
+</link>
+
+
+
+<link name= "link2">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link2.stl"/>    
+        </geometry>
+        <material name = "light_grey">
+         <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link2.stl"/>    
+        </geometry>    
+    </collision>
+
+    <inertial>
+        <origin xyz="-0.001991 0.465745 0.069578" rpy="0 0 0" />
+        <mass value= "4.5"/>
+        <inertia ixx= "0.521484375" ixy="0" ixz="-0" iyy="0.0271875" iyz="0" izz="0.521484375" />
+        <!-- <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0.15625" /> -->
+    </inertial>
+</link>
+
+
+
+<link name= "link3">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link3.stl"/>    
+        </geometry>
+        <material name = "light_grey">
+         <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link3.stl"/>    
+        </geometry>    
+    </collision>
+
+    <inertial>
+        <origin xyz="-0.102694 0.463870 -0.115298" rpy="0 0 0.0959931" />
+        <mass value= "8"/>
+        <inertia ixx= "1.22373333333" ixy="0" ixz="-0" iyy="0.0533333333333" iyz="0" izz="1.22373333333" />
+
+    </inertial>
+</link>
+
+
+<link name= "link4">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link4_n.stl"/>    
+        </geometry>
+        <material name = "light_grey">
+         <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link4_n.stl"/>    
+        </geometry>    
+    </collision>
+
+    <inertial>
+        <origin xyz="0.000000 0.074249 -0.033000" rpy="0 0 0" />
+        <mass value= "1"/>
+        <inertia ixx= "0.00249633333333" ixy="0" ixz="-0" iyy="0.00249633333333" iyz="-0" izz="0.00343541666667" /> 
+    </inertial>
+</link>
+
+<link name= "link5">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link5.stl"/>    
+        </geometry>
+        <material name = "light_grey">
+         <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link5.stl"/>    
+        </geometry>    
+    </collision>
+
+    <inertial>
+        <origin xyz="0.000000 0.074249 -0.033000" rpy="0 0 0" />
+        <mass value= "1"/>
+        <inertia ixx= "0.00249633333333" ixy="0" ixz="-0" iyy="0.00249633333333" iyz="-0" izz="0.00343541666667" /> 
+    </inertial>
+</link>
+
+<link name="tool">
+</link>
+
+<link name= "finger1">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/fin1.stl"/>    
+        </geometry>
+        <material name = "light_grey">
+         <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/fin1.stl"/>    
+        </geometry>    
+    </collision>
+
+    <inertial>
+        <origin xyz="0.000000 0.074249 -0.033000" rpy="0 0 0" />
+        <mass value= "1"/>
+        <inertia ixx= "0.00249633333333" ixy="0" ixz="-0" iyy="0.00249633333333" iyz="-0" izz="0.00343541666667" /> 
+    </inertial>
+</link>
+
+<link name= "finger2">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/fin2.stl"/>    
+        </geometry>
+        <material name = "light_grey">
+         <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/fin2.stl"/>    
+        </geometry>    
+    </collision>
+
+    <inertial>
+        <origin xyz="0.000000 0.074249 -0.033000" rpy="0 0 0" />
+        <mass value= "1"/>
+        <inertia ixx= "0.00249633333333" ixy="0" ixz="-0" iyy="0.00249633333333" iyz="-0" izz="0.00343541666667" /> 
+    </inertial>
+</link>
+
+<link name= "kinect_link">
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <box size="0.05 0.2 0.05"/>    
+        </geometry>
+        <material name = "light_grey">
+         <color rgba="0.7 0.7 0.7 1.0"/>
+        </material>
+    </visual>
+    
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.05 0.2 0.05"/>
+        </geometry>    
+    </collision>
+
+</link>
+
+<link name="camera_link_optical" >
+</link>
+
+<!-- ...........................................joints........................................................................... -->
+
+<joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <!--<limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />-->
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+   <!-- <axis xyz = "0 0 1" />-->
+</joint> 
+
+<joint name="base_link1_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <origin xyz="0.0 0.0 0.170" rpy="0.0 0.0 0.0"/>
+    <axis xyz = "0 0 1" />
+</joint> 
+
+<joint name="link1_link2_joint" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <origin xyz="0.050 0.200 0.500" rpy="0.0 1.5708 0.0"/>
+    <axis xyz = "0 0 1" />
+</joint> 
+
+<joint name="link2_link3_joint" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <limit lower= "-3.0" upper= "3.0" effort="500" velocity="3" />
+    <origin xyz="0.0 1.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz = "0 0 1" />
+</joint> 
+
+<joint name="link3_link4_joint" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <origin xyz="-0.153 1.083 -0.120" rpy="0.0 0.0 0.0"/>
+    <axis xyz = "0 0 1" />
+</joint> 
+
+<joint name="link4_link5_joint" type="revolute">
+    <parent link="link4"/>
+    <child link="link5"/>
+    <limit lower= "-3.0" upper= "3.0" effort="200" velocity="3" />
+    <origin xyz="0 0.130 0" rpy="-1.5708 1.5708 0"/>
+    <axis xyz = "0 0 1" />
+</joint> 
+
+<joint name="link5_tool_joint" type="fixed">
+    <parent link="link5"/>
+    <child link="tool"/>
+    <origin xyz="0.0 0.0 0.330" rpy="-1.5708 -1.5708 0.0"/>
+</joint> 
+
+<joint name="l_finger_joint" type="prismatic">
+    <origin rpy="1.5708 0 0" xyz="0.080 0 0.075" />
+    <parent link="link5" />
+    <child link="finger1" />
+    <axis xyz="1 0 0" />
+  <limit effort="60" lower="0" upper="0.1" velocity="0.05" /><dynamics damping="100.0" />
+</joint>
+
+<joint name="r_finger_joint" type="prismatic">
+    <origin rpy="1.5708 0 0" xyz="-0.080 0 0.075" />
+    <parent link="link5" />
+    <child link="finger2" />
+    <axis xyz="-1 0 0" />
+    <limit effort="60" lower="0" upper="0.1" velocity="0.05" /><dynamics damping="100.0" />
+</joint>
+
+<joint name="kinect_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="kinect_link"/>
+    <origin xyz="-3 -0 1.2" rpy="0 0 0"/>
+</joint> 
+
+<joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708" />
+    <parent link="kinect_link" />
+    <child link="camera_link_optical" />
+</joint>
+
+<!-- ...........................................gazebo link properties........................................................................... -->
+
+<gazebo reference="base_link">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="link1">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="link2">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="link3">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="link4">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="link5">
+    <mu1>5.0</mu1>
+    <mu2>5.0</mu2>
+    <material>Gazebo/Grey</material>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="finger1">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <mu1>10000.0</mu1>
+    <mu2>10000.0</mu2>
+    <minDepth>0.001</minDepth>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="finger2">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+    <mu1>100000</mu1>
+    <mu2>100000</mu2>
+    <minDepth>0.001</minDepth>
+    <turnGravityOff>false</turnGravityOff>
+</gazebo>
+
+<gazebo reference="kinect_link">
+    <sensor type="depth" name="camera_1">
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>15.0</update_rate>
+      <camera>
+        <horizontal_fov>1.047197</horizontal_fov>
+        <image>          
+          <format>B8G8R8</format>
+          <width>640</width>
+          <height>480</height>
+        </image>
+        <depth_camera>
+        </depth_camera>
+        <clip>
+          <near>0.05</near>
+          <far>50</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+        <baseline>0.1</baseline>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>10.0</updateRate>
+        <cameraName>kinect</cameraName>
+        <frameName>camera_link_optical</frameName>
+        <imageTopicName>rgb/image_raw</imageTopicName>
+        <depthImageTopicName>depth/image_raw</depthImageTopicName>
+        <pointCloudTopicName>depth/points</pointCloudTopicName>
+        <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName> 
+        <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>       
+        <pointCloudCutoff>0.4</pointCloudCutoff>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        <CxPrime>0.0</CxPrime>
+        <Cx>0.0</Cx>
+        <Cy>0.0</Cy>
+        <focalLength>0.0</focalLength>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+<gazebo>
+   <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+        <arm>
+           <arm_name>robot</arm_name>
+           <palm_link>link5</palm_link>
+           <gripper_link>finger1</gripper_link>
+           <gripper_link>finger2</gripper_link>
+        </arm>
+       <forces_angle_tolerance>100</forces_angle_tolerance>
+       <update_rate>1000</update_rate>
+       <grip_count_threshold>1</grip_count_threshold>
+       <max_grip_count>2</max_grip_count>
+       <release_tolerance>0.005</release_tolerance>
+       <disable_collisions_on_attach>true</disable_collisions_on_attach>
+       <contact_topic>__default_topic__</contact_topic>
+    </plugin>
+</gazebo>
+  
+
+
+
+<!-- ...........................................control........................................................................... -->
+
+<gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+     <robotNamespace>/robot</robotNamespace>
+     <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+     <legacyModeNS>true</legacyModeNS>
+    </plugin>
+</gazebo>
+
+<transmission name="base_link1_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_link1_joint">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_link1_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>3</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link1_link2_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="link1_link2_joint">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="link2_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>3</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link2_link3_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="link2_link3_joint">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="link3_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>3</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link3_link4_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="link3_link4_joint">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="link4_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>2</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link4_link5_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="link4_link5_joint">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="link5_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>2</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link5_finger1_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="l_finger_joint">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="l_finger_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>2</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="link5_finger2_control">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="r_finger_joint">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="r_finger_motor">
+     <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+     <mechanicalReduction>2</mechanicalReduction>
+    </actuator>
+</transmission>
+
+</robot>
+
+
+
+    

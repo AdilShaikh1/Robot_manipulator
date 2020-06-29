@@ -1,0 +1,39 @@
+<sdf version="1.5">
+
+<world name="default">
+    <include>
+        <uri>model://sun</uri>
+    </include>
+    
+    <include>
+        <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+        <uri>model://ground_plane</uri>
+    </include>
+    
+   
+
+    <include>
+        <pose frame="">2 0 0 0 0 0</pose>
+       <uri>model://table</uri>
+    </include>
+
+    <include>
+        <pose frame="">-2 0 0 0 0 0</pose>
+       <uri>model://table</uri>
+    </include>
+    
+    <include>
+        <pose frame="">-2.01 0 1.09 0 0 0</pose>
+       <uri>model://wood_cube_5cm</uri>
+    </include>
+
+    <include>
+        <pose frame="">3.5 -3 0 0 0 0</pose>
+       <uri>model://turtlebot3_house</uri>
+    </include>
+    
+</world>
+</sdf>
