@@ -1,5 +1,5 @@
 # Robot_manipulator
-Path planning, obstacle avoidance, object detection and pose estimation, point clouds.
+Path planning, obstacle avoidance, object detection and pose estimation, point clouds for a 5-DOF MANIPULATOR.
 
 
 
