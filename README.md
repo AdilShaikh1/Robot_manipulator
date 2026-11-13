@@ -1,6 +1,16 @@
-<h1 align="center">Robot_manipulator</h1>
+<h1 align="center">Robot Manipulator</h1>
+
+<p align="center"><strong>A 5-DoF arm that finds, tracks and grasps objects in Gazebo.</strong></p>
 
 <p align="center">A ROS Melodic and Gazebo simulation of a 5-DoF robot arm that detects objects with an RGB-D camera,<br>estimates their 6-DoF pose and grasps them with MoveIt.</p>
+
+<p align="center"><a href="#build">Build</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#usage">Usage</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#system-overview">System overview</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#extending-it">Extending it</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#license">License</a></p>
+
+<br />
+
+> Detection and grasping are separate ROS nodes joined only by TF. find_object_2d publishes each object's pose as a TF frame, and the planners take only that frame from perception, so another detector can replace it without changes to the grasp code.
+
+<br />
 
 <p align="center">
   <img src="pictures/dynamic_obj_grab.png" width="800" alt="The arm tracks a can as it is moved on the table">
