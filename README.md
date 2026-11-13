@@ -1,10 +1,12 @@
-# Robot_manipulator
+<h1 align="center">Robot_manipulator</h1>
 
-Robot_manipulator is a 5-DoF robot arm in ROS Melodic and Gazebo. It finds an object with an RGB-D camera, estimates the object's 6-DoF pose and picks it up. I developed it as a personal project in 2020.
+<p align="center">A ROS Melodic and Gazebo simulation of a 5-DoF robot arm that detects objects with an RGB-D camera,<br>estimates their 6-DoF pose and grasps them with MoveIt.</p>
 
-![The arm tracks a can as it is moved on the table](pictures/dynamic_obj_grab.png)
+<p align="center">
+  <img src="pictures/dynamic_obj_grab.png" width="800" alt="The arm tracks a can as it is moved on the table">
+</p>
 
-## What I did
+## Features
 - **Object detection and 6-DoF pose.** find_object_2d matches ORB features of trained objects in the camera image. With the depth image and PnP, it publishes each object's 6-DoF pose as a TF frame.
 - **Table-top segmentation.** A PCL nodelet pipeline downsamples the point cloud, estimates normals and segments the table plane. It then extracts the objects above the table with a convex hull and a polygonal prism.
 - **Obstacle-aware planning.** MoveIt plans with an IKFast solver for the 5-DoF arm. A pass-through filter feeds the depth cloud into an OctoMap, so plans avoid obstacles the camera sees.
@@ -14,7 +16,7 @@ Robot_manipulator is a 5-DoF robot arm in ROS Melodic and Gazebo. It finds an ob
 ## System overview
 
 ```mermaid
-flowchart LR
+flowchart TB
     camera["Kinect camera in Gazebo"] -->|"RGB and depth images"| detect["find_object_2d<br/>ORB features + PnP"]
     detect -->|"TF frame object_id"| planners["Python planners<br/>jointplan.py, demo_obj.py"]
     planners -->|"pose and named targets"| movegroup["MoveIt move_group<br/>IKFast solver + OctoMap"]
@@ -36,16 +38,13 @@ flowchart LR
 | Gripper controller | `/robot/gripper_controller` (2 fingers) | MoveIt |
 | Planning groups | `arm` (idle, pose1, goal) and `gripper` (open, close) | planners |
 
-## Results
-In Gazebo the robot detects a trained object, estimates its pose and grasps it. If the object is moved on the table, the arm follows it.
-
-## 1. Prerequisites
-I built and ran it in 2020 with:
+## Requirements
+Last tested in 2020 with:
 - Ubuntu 18.04 and ROS Melodic (desktop-full, which includes Gazebo 9)
 - MoveIt 1, ros_control, find_object_2d and pcl_ros, which rosdep installs from the package manifests
 - gazebo_grasp_plugin, built from source with the repositories below
 
-## 2. Build
+## Build
 
 ```bash
 mkdir -p ~/catkin_ws/src && cd ~/catkin_ws/src
@@ -56,7 +55,7 @@ cd ~/catkin_ws && rosdep install --from-paths src --ignore-src -y
 catkin_make && source devel/setup.bash
 ```
 
-## 3. Run
+## Usage
 **Detect an object and grasp it:**
 
 ```bash
@@ -69,6 +68,27 @@ rosrun five_dof_manipulator jointplan.py        # find object_27 and grasp it
 
 **Table-top segmentation:** with the simulation running, `roslaunch five_dof_manipulator convex_hull.launch` starts the PCL pipeline and opens it in RViz.
 
+## Demo
+The robot detects a trained object, estimates its pose and grasps it. If the object is moved on the table, the arm follows it.
+
+<p align="center">
+  <img src="pictures/obj_detection.png" width="55.5%" alt="Object detection with ORB features, in simulation">
+  <img src="pictures/pose_estimation.png" width="42.5%" alt="Pose estimation in RViz from the depth camera's point cloud">
+</p>
+<p align="center"><em>Object detection with ORB features (left) and pose estimation from the depth camera's point cloud (right).</em></p>
+
+<p align="center">
+  <img src="pictures/pnc1.png" width="48.6%" alt="The arm at the pick table in the Gazebo world">
+  <img src="pictures/pnc2.png" width="49.4%" alt="The arm between two tables in the Gazebo world">
+</p>
+<p align="center"><em>The arm at the pick table (left) and between the two tables of the Gazebo world (right).</em></p>
+
+## Extending it
+- **Detect your own objects.** The detector loads its trained objects from a saved find_object_2d session: `five_dof_manipulator/session/block.bin`, or `five_dof_manipulator/demo/session/demo.bin` for the dynamic demo. Add objects in the find_object_2d window and save the session over that file.
+- **Grasp a different object.** Detected objects appear as TF frames named `object_<id>`. Both planners pick `object_27`, so change `obj = "object_27"` in `five_dof_manipulator/trajectory/jointplan.py` or `five_dof_manipulator/demo/demo_obj.py`.
+- **Change what the OctoMap sees.** `five_dof_manipulator/launch/filter.launch` drops the points whose y coordinate lies between -0.12&nbsp;m and 0.184&nbsp;m before they reach MoveIt's OctoMap. Adjust those limits for your scene.
+- **Change the arm.** After editing the URDF, regenerate the IKFast solver and run `robot_arm_ikfast_plugin/update_ikfast_plugin.sh` to rebuild the MoveIt plugin around it.
+
 ## Repository layout
 - `five_dof_manipulator/`: robot description and meshes, Gazebo worlds, controllers, perception launch files, planners and demos
 - `robot_moveit_config/`: MoveIt configuration (OMPL and CHOMP pipelines)
@@ -76,18 +96,9 @@ rosrun five_dof_manipulator jointplan.py        # find object_27 and grasp it
 - `pictures/`: screenshots
 
 ## Limitations
-- It targets ROS Melodic, which reached end of life in May 2023. I haven't rerun these steps since 2020.
-- `jointplan.py` grasps and lifts one object, `object_27`. It doesn't place it.
-- Detection works only for the objects trained in `objects/` and the saved find_object sessions.
-
-## Media
-![Object detection with ORB features, in simulation](pictures/obj_detection.png)
-
-![Pose estimation in RViz from the depth camera's point cloud](pictures/pose_estimation.png)
-
-![The arm at the pick table in the Gazebo world](pictures/pnc1.png)
-
-![The arm between two tables in the Gazebo world](pictures/pnc2.png)
+- It targets ROS Melodic, which reached end of life in May 2023.
+- `jointplan.py` grasps and lifts one object. It doesn't place it.
+- Detection works only for objects in the saved find_object_2d sessions.
 
 ## License
 The five_dof_manipulator package and the pictures are MIT licensed (see LICENSE). Generated IKFast solver code keeps its original license header.
