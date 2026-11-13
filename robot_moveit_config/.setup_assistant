@@ -1,11 +1,11 @@
 moveit_setup_assistant_config:
   URDF:
-    package: six_dof
+    package: five_dof_manipulator
     relative_path: urdf/robot.urdf
     xacro_args: ""
   SRDF:
     relative_path: config/robot.srdf
   CONFIG:
-    author_name: Siddharth
-    author_email: sid.ghodasara@gmail.com
+    author_name: Adil Shaikh
+    author_email: 48984410+AdilShaikh1@users.noreply.github.com
     generated_timestamp: 1591989975

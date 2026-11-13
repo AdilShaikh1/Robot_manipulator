@@ -27,7 +27,7 @@
     <param name="max_range" type="double" value="5.0" />
 
   
-  <include file="$(find six_dof)/launch/filter.launch"/>
+  <include file="$(find five_dof_manipulator)/launch/filter.launch"/>
 
   
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
        
-      <include file="$(find six_dof)/demo/demo_world.launch">
+      <include file="$(find five_dof_manipulator)/demo/demo_world.launch">
             <arg name="paused" value="false"/>
             <arg name="verbose" value="true"/>
             <arg name="debug" value="false"/>
@@ -14,12 +14,12 @@
             
        
 
-    <param name="robot_description" command="cat $(find six_dof)/urdf/robot.urdf" />
+    <param name="robot_description" command="cat $(find five_dof_manipulator)/urdf/robot.urdf" />
 
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
         args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -model robot -param robot_description"/>
 
-    <rosparam file="$(find six_dof)/config/robot_controller.yaml" command="load"/> 
+    <rosparam file="$(find five_dof_manipulator)/config/robot_controller.yaml" command="load"/> 
 
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
      <param name="use_gui" value="false"/>
@@ -32,8 +32,8 @@
                   gripper_controller"/>
 
 
-    <include file="$(find six_dof)/demo/featuredemo.launch"/>
+    <include file="$(find five_dof_manipulator)/demo/featuredemo.launch"/>
             
-    <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find six_dof)/rviz_config/sip_config.rviz"/> -->
+    <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find five_dof_manipulator)/rviz_config/sip_config.rviz"/> -->
 
 </launch>

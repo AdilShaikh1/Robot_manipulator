@@ -7,7 +7,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/base.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/base.stl"/>    
         </geometry>
         <material name = "light_grey">
          <color rgba="0.7 0.7 0.7 1.0"/>
@@ -17,7 +17,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/base.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/base.stl"/>    
         </geometry>    
     </collision>
     
@@ -33,7 +33,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link1.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/link1.stl"/>    
         </geometry>
         <material name = "light_grey">
          <color rgba="0.7 0.7 0.7 1.0"/>
@@ -43,7 +43,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link1.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/link1.stl"/>    
         </geometry>    
     </collision>
 
@@ -61,7 +61,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link2.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/link2.stl"/>    
         </geometry>
         <material name = "light_grey">
          <color rgba="0.7 0.7 0.7 1.0"/>
@@ -71,7 +71,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link2.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/link2.stl"/>    
         </geometry>    
     </collision>
 
@@ -89,7 +89,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link3.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/link3.stl"/>    
         </geometry>
         <material name = "light_grey">
          <color rgba="0.7 0.7 0.7 1.0"/>
@@ -99,7 +99,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link3.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/link3.stl"/>    
         </geometry>    
     </collision>
 
@@ -116,7 +116,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link4_n.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/link4_n.stl"/>    
         </geometry>
         <material name = "light_grey">
          <color rgba="0.7 0.7 0.7 1.0"/>
@@ -126,7 +126,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link4_n.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/link4_n.stl"/>    
         </geometry>    
     </collision>
 
@@ -141,7 +141,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link5.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/link5.stl"/>    
         </geometry>
         <material name = "light_grey">
          <color rgba="0.7 0.7 0.7 1.0"/>
@@ -151,7 +151,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/link5.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/link5.stl"/>    
         </geometry>    
     </collision>
 
@@ -169,7 +169,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/fin1.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/fin1.stl"/>    
         </geometry>
         <material name = "light_grey">
          <color rgba="0.7 0.7 0.7 1.0"/>
@@ -179,7 +179,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/fin1.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/fin1.stl"/>    
         </geometry>    
     </collision>
 
@@ -194,7 +194,7 @@
     <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/fin2.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/fin2.stl"/>    
         </geometry>
         <material name = "light_grey">
          <color rgba="0.7 0.7 0.7 1.0"/>
@@ -204,7 +204,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-         <mesh filename="file:///home/adil/sim_ws/src/six_dof/meshes/fin2.stl"/>    
+         <mesh filename="package://five_dof_manipulator/meshes/fin2.stl"/>    
         </geometry>    
     </collision>
 

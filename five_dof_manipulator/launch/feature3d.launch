@@ -17,7 +17,7 @@
 	<node name="find_object_3d" pkg="find_object_2d" type="find_object_2d" output="screen">
 		<param name="gui" value="$(arg gui)" type="bool"/>
 		<param name="settings_path" value="$(arg settings_path)" type="str"/>
-    <param name="session_path" value="$(find six_dof)/session/block.bin" type="str"/>
+    <param name="session_path" value="$(find five_dof_manipulator)/session/block.bin" type="str"/>
 		<param name="subscribe_depth" value="true" type="bool"/>
 		<param name="objects_path" value="$(arg objects_path)" type="str"/>
 		<param name="object_prefix" value="$(arg object_prefix)" type="str"/>

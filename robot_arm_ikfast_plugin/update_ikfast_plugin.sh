@@ -7,7 +7,7 @@ planning_group_name=arm
 ikfast_plugin_pkg=robot_arm_ikfast_plugin
 base_link_name=world
 eef_link_name=tool
-ikfast_output_path=/home/zorv/catkin_ws1/src/robot_arm_ikfast_plugin/src/robot_arm_ikfast_solver.cpp
+ikfast_output_path=$(rospack find robot_arm_ikfast_plugin)/src/robot_arm_ikfast_solver.cpp
 
 rosrun moveit_kinematics create_ikfast_moveit_plugin.py\
   --search_mode=$search_mode\
