@@ -104,6 +104,7 @@ The robot detects a trained object, estimates its pose and grasps it. If the obj
 - `robot_moveit_config/`: MoveIt configuration (OMPL and CHOMP pipelines)
 - `robot_arm_ikfast_plugin/`: IKFast kinematics plugin for the arm
 - `pictures/`: screenshots
+- `CHANGELOG.md`: release history
 
 ## Limitations
 - It targets ROS Melodic, which reached end of life in May 2023.
